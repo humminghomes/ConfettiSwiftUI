@@ -4,7 +4,7 @@
 //
 //  Created by Simon Bachmann on 24.11.20.
 //
-
+import UIKit
 import SwiftUI
 
 public enum ConfettiType:CaseIterable, Hashable {
@@ -20,6 +20,7 @@ public enum ConfettiType:CaseIterable, Hashable {
     case shape(Shape)
     case text(String)
     case sfSymbol(symbolName: String)
+    case image(UIImage)
     
     public var view:AnyView{
         switch self {
@@ -35,6 +36,8 @@ public enum ConfettiType:CaseIterable, Hashable {
             return AnyView(Text(text))
         case .sfSymbol(let symbolName):
             return AnyView(Image(systemName: symbolName))
+        case .image(let image):
+            return AnyView(Image(uiImage: image))
         default:
             return AnyView(Circle())
         }

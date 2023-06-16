@@ -7,7 +7,6 @@ let package = Package(
     name: "ConfettiSwiftUI",
     platforms: [
         .iOS(.v14),
-        .macOS(.v11),
         .tvOS(.v14),
         .watchOS(.v7)
     ],
@@ -27,11 +26,7 @@ let package = Package(
         .target(
             name: "ConfettiSwiftUI",
             dependencies: [],
-            path: "Sources"),
-        .testTarget(
-            name: "ConfettiSwiftUITests",
-            dependencies: ["ConfettiSwiftUI"],
-            path: "Tests"),
-        
+            path: "Sources")
+
     ]
 )
